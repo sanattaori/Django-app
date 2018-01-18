@@ -18,9 +18,12 @@ from django.urls import path
 from django.conf.urls import url
 from .views import welcome
 
+from . import views
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     # path('welcome', welcome),
     # is equal to
-    # url(r'^welcome$',welcome)
+    url(r'^welcome$', welcome),
+    path('', views.index, name='index')
 ]
