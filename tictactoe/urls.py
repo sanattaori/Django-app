@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from django.conf.urls import url
+from django.conf.urls import url , include
 from .views import welcome
 
 from . import views
@@ -25,5 +25,6 @@ urlpatterns = [
     # path('welcome', welcome),
     # is equal to
     url(r'^welcome$', welcome),
-    path('', views.index, name='index')
+    path('', views.index, name='index'),
+    url(r'^player/',include('player.urls'))
 ]
