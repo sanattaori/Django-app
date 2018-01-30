@@ -2,13 +2,20 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Player</title>
 </head>
 <body>
 
-<h1>Welcome</h1>
+    <h1>Welcome {{user.username}}</h1>
+    These are your active games:
 
-<h4> There are currently {{ngames}} in database </h4>
+    <ul>
+        {% for g in games %}
+            <li>Game {{g.id}}: {{g.first_player}} vs {{g.second_player}}</li>
+        {% endfor %}
+    </ul>
+
+<h4> There are currently {{ ngames }} in database </h4>
 
 </body>
 </html>
